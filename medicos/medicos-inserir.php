@@ -3,10 +3,10 @@
 $nome = $_POST['nome'];
 $telefone = $_POST['telefone'];
 $crm = $_POST['crm'];
-$especialidade = $_´POST['especialidade'];
+$especialidade = $_POST['especialidade'];
 
 include "../include/conexao.php";
-$sqlInserir = "INSERT INTO tb_medicos(nome, telefone, crm, especialidade)" values('{$nome}' , '{telefone}' , '{crm}' . '{especialidade}');";
+$sqlInserir = "INSERT INTO tb_medicos(nome, telefone, crm, especialidade) values('{$nome}' , '{$telefone}' , '{$crm}' , '{$especialidade}');";
 
 $resultado = mysqli_query($conexao, $sqlInserir);
 

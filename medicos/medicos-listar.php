@@ -2,7 +2,7 @@
 
 
 <hr>
-<p> <a href="#">Novo medico</a> </p>
+<p> <a href="medicos-formulario-inserir.php">Novo medico</a> </p>
 
 <?php 
 include "../include/conexao.php";
@@ -21,13 +21,14 @@ $listaDeMedicos = mysqli_query($conexao , $sqlBusca);
     <?php
     while($medico = mysqli_fetch_assoc($listaDeMedicos)){
      echo "<tr>";
-        echo "<th>{$medico['id']}</th>";  
-        echo "<th>{$medico['nome']}</th>";
-        echo "<th>{$medico['telefone']}</th>";
-        echo "<th>{$medico['crm']}</th>";
-        echo "<th>{$medico['especialidade']}</th>";
-        echo "<th>ações | excluir</th>";
-     echo"</tr>";
+        echo "<td>{$medico['id']}</th>";  
+        echo "<td>{$medico['nome']}</th>";
+        echo "<td>{$medico['telefone']}</th>";
+        echo "<td>{$medico['crm']}</th>";
+        echo "<td>{$medico['especialidade']}</th>";
+        echo "<td>  <a href='medicos-formulario-alterar.php?id_medico={$medico['id']}'>alterar</a> | ";
+        echo "<a class='btn btn-danger' href='medicos-excluir.php?id_medicos={$medico['id']}'><i class='bi bi-x-lg'></a></td>";
+     
     }
     ?>
 
@@ -42,4 +43,3 @@ $listaDeMedicos = mysqli_query($conexao , $sqlBusca);
 
 
 
-?>

@@ -16,7 +16,7 @@
             <hr>
         </header>
         <nav>
-            <a href="../medicos/medicos-listar.php">medicos atendendo<img src="../imagens/medico.png"></a>
-            <a href="#">agendamento de consulta<img src="../imagens/horario.png"></a>
-            <a href="#">cadastro de pacientes<img src="../imagens/medica.png"></a>
+            <a href="../medicos/medicos-listar.php">medicos atendendo<img src="imagens/medico.png"></a>
+            <a href="#">agendamento de consulta<img src="imagens/horario.png"></a>
+            <a href="medicos/cadastro-clientes.php">cadastro de pacientes<img src="imagens/medica.png"></a>
         </nav>
