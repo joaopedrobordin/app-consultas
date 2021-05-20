@@ -1,8 +1,10 @@
 <?php include "../include/cabecalho.php"; ?>
 
-<?php include "../include/conexao.php"; ?>
+<?php include "../include/conexao.php"; 
 
-$id_pacientes = $_GET['id'];
+$id_pacientes = $_GET['id']; ?>
+
+sqlBuscar = 'SELECT * FROM tb_pacientes WHERE id={$id_pacientes}'
 
 <form name="formulario-pacientes" method="post" action="pacientes-inseir.php">
 <input name="id_paciente" type="hiddem" value="<?php echo id_paciente ; ?>">

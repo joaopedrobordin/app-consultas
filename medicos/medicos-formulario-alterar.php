@@ -1,29 +1,52 @@
-<?php include "../include/cabecalho.php";
-        include "../include/conexao.php";
+<?PHP include "../include/cabecalho.php" ; 
 
-$sqlBusca = "SELECT * FROM tb_pacientes"; //busca a lista no banco de dados
+$id_medico = $_GET['id_medico'] ;
 
-$listaDePacientes = mysqli($conexao , $sqlBuscar);?>
+include '../include/conexao.php'; 
+$sqlBuscar = 'SELECT * FROM tb_medicos WHERE id = {$id_medico};';
 
-<table class="table table-hover">
-    <tr>
-        <td>ID</td>
-        <td>nome</td>
-        <td>telefone</td>
-        <td>Data de nacimento</td>
-        <td>Convenio</td>
-        <td>Ações</td>
-    </tr>
+$lista_medicos = mysqli_query($conexao , $sqlBuscar);
 
-    
+$nome = $telefone = $crm = $especialidade = ""
 
-<?php 
-while($pacientes = mysql_fetch_assoc($listaDePacientes))
-{  echo "<tre>";
-    echo "<td>{$pacientes['id']}</td>"
- }
+while($medico = mysqli_fetch_assoc($lista_medicos))
+    {$nome = $medico['nome'];
+     $telefone = $medico['telefone'];
+     $crm = $medico['crm'];
+     $especialide = $medicos['especialidade'];}
+?>
 
-include "../include/rodape.php";
+<form nome="formulario-inserir-medicos" method="post" action="medicos-alterar.php">
+
+<input name="id_medico" type="hidden"value="<?php echo $_GET['id_medico']; ?>">
+    <p>
+    <label>Nome:</lebel>   // <input name="nome" values="<?php echo $nome ; ?>">
+    </p>
+
+    <p>
+    <label>telefone:</label>    <input name="telefone" values="<?php echo $telefone; ?>">   
+    </p>
+
+    <p>
+    <label>crm</label>     <input name="crm" values="<?php echo $crm; ?>">
+    </p>
+
+    <p>
+    <label>Especialidade:</label>
+    <select name="especialidade">
+         <option value="cardiologista"<?php if($especialidade == 'cardiologista'){ echo "selected "; } ?>>cardiologista</option>   
+         <option value="nutricionista"<?php if($especialidade == 'nutricionista'){ echo "selected "; } ?>>nutricionista</option>
+         <option value="ortopedista"<?php if($especialidade == 'ortopedista'){ echo "selected "; } ?>>ortopedista</option>
+    </select>
+    </p>
+
+    <p>
+        <button type="submit">Salvar</button>s
+    </p>
+</form>
+
+<?PHP include "../include/rodape.php" ; ?>
+
 
 
 
