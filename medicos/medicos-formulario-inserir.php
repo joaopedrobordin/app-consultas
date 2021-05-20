@@ -2,7 +2,7 @@
 
 $id_medico = $_GET['id_medico'] 
 
-include "../include/conexao"; 
+include '../include/conexao.php'; 
 $sqlBuscar = 'SELECT * FROM tb_medicos WHERE id = {$id_medico};';
 
 $lista_medicos = mysqli_query($conexao , $sqlBuscar);
@@ -20,7 +20,7 @@ while($medico = msqli_fetch_assoc($lista_medicos))
 
 <input name="id_medico" type="hidden"value="<?php echo $_GET['id_medico']; ?>">
     <p>
-    <label>Nome:</lebel>    <input name="nome" values="<?php echo $nome; ?>"> 
+    <label>Nome:</lebel>   // <input name="nome" values="<?php echo $nome ; ?>">
     </p>
 
     <p>

@@ -1,6 +1,7 @@
-<?php include "include/cabecalho.php" ?>
+<?php include "../include/cabecalho.php" ; ?>
 
 
 
-<?PHP include "../include/conexao.php" ?>
+<?php include "../include/conexao.php" ; ?>
+
 
