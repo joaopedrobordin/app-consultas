@@ -19,10 +19,22 @@ $listarDeAgenda = mysqli_query($conexao , $sqlbusca);
 
 <?php
 while($agenda = mysqli_fetch_assoc(listaDeAgenda)){
+    echo"<tr>;
+    echo"<td>{$agenda['id']}</td>";
+    echo"<td>{$agenda['data']}</td>";
+    echo"<td>{$agenda['hora']}</td>";
+    echo"<td>{$agenda['nome_medico']}</td>";
+    echo"<td>{$agenda['sala']}</td>";
+    echo"<td>{$agenda['nome_paciente']}</td>";
+    echo"<td>alterar | ";
+    echo"<a href="agenda-exluir.php?id_agenda={$agendar['id']}">exlcuir</a></td>;
+    echo"</tr>;
 
 }
 ?>
+</table>
 
+<?php include "../include/rodape.php"; ?>
 
 
 
